@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+puts "Cleaning old database"
+Room.destroy_all
+Hotel.destroy_all
+
+puts "Creating Hotels"
+Hotel.create(name: "Hotel des près", address: "Rue des Lys")
+Hotel.create(name: "Hotel du grand chacal", address: "Rue des prés")
+Hotel.create(name: "Hotel de la ville", address: "Rue des Coquelicots")
+Hotel.create(name: "Superhotel", address: "Rue des rues")
+
+puts "Creating Rooms"
+Room.create(price_per_night: 25, capacity: 2, hotel_id: 1)
+Room.create(price_per_night: 50, capacity: 3, hotel_id: 2)
+Room.create(price_per_night: 75, capacity: 4, hotel_id: 3)
+Room.create(price_per_night: 100, capacity: 5, hotel_id: 4)

@@ -1,0 +1,20 @@
+<h1>Room details</h1>
+
+<div class="container">
+  <div class="d-flex w-100 justify-content gap-5">
+    <div class="w-50 d-flex flex-column justify-content-between" style="border-radius: 10px">
+    <%= image_tag("https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") %>
+    </div>
+    <div class="w-50">
+      <%= render "booking_form", booking: @booking, data: {turbo_confirm: "Are you sure?"} %>
+    </div>
+  </div>
+</div>
+
+<%= @room.hotel.name %>
+<%= @room.price_per_night %>
+<%= @room.capacity %>
+
+<%= link_to "Back", rooms_path %>
+
+<%= link_to "Efface cette chambre", room_path(@room), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this room?" } %>

@@ -1,0 +1,22 @@
+<div class="">
+  <div class="row">
+    <div class="">
+      <div class="bg-white p-3 shadow" style="border-radius: 10px">
+        <div class ="border-radius">
+          <h3> <strong> Book a Room </strong></h3>
+          <% @booking = Booking.new %>
+          <%= simple_form_for [@room, @booking], data: { controller: 'dater', dater_price_value: @room.price_per_night } do |f| %>
+            <strong><%= "#{@room.price_per_night}""€ "%></strong><%="per day"%>
+            <div class="mt-4">
+              <span style="font-size: 14px"><strong><%= f.input :starts_at, input_html: {data: { controller: 'datepicker', dater_target: "startDate"}, placeholder: "Click to select a date" }, as: :string, style: "border:none border-radius: 25px" %></strong>
+              <span style="font-size: 14px"><strong><%= f.input :ends_at, input_html: {data: { controller: 'datepicker',  dater_target: "endDate"}, placeholder:"Click to select a date" }, as: :string %></strong>
+              <hr>
+              <%# <span style="font-size: 14px; border: none"><strong><%= p (f.input :total_amount, disabled: true, readonly: true, input_html: { data: { dater_target: "totalAmount" } }, class: 'custom-input') %></strong>
+              <%=  f.submit class: 'btn btn-primary color-D7572B' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

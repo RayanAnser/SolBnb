@@ -1,0 +1,10 @@
+<div class="container">
+<h1>Our Rooms</h1>
+<div class="cards">
+<% @rooms.each do |room| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= link_to room.price_per_night, room_path(room) %>
+    </div>
+<% end %>
+</div>
+</div>
