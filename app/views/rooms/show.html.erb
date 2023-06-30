@@ -1,17 +1,18 @@
 
 <div class="container">
-<h1>Room details</h1>
+<h1 class= "hotel-title">Room details</h1>
 <hr>
   <div class="d-flex w-100 justify-content gap-5">
     <div class="w-50 d-flex flex-column justify-content-between" style="border-radius: 20px">
-    <%= image_tag("https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") %>
+    <%= image_tag("https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", class: "img-booking") %>
+    <hr>
     </div>
     <div class="w-50">
       <%= render "booking_form", booking: @booking, data: {turbo_confirm: "Are you sure?"} %>
     </div>
   </div>
   <strong><h2><%= @room.hotel.name %></h2></strong>
-  <p>Capacity: <%= @room.capacity %> Pers </p>
+   <p><i class="fa-solid fa-user"></i> <%= @room.capacity %>  people </p>
 
   <button class="button-40" role="button"><%= link_to "Back", rooms_path, style: "color: white;", class: "no-underline"%></button>
 </div>

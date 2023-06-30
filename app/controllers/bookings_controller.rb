@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.room = @room
     @booking.user = current_user
     if @booking.save!
-      redirect_to room_path(@room), notice: 'Votre réservation a été confirmée.'
+      redirect_to room_path(@room), notice: 'Your booking is confirmed.'
     else
       render :new, status: :unprocessable_entity
     end
