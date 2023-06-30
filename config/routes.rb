@@ -28,4 +28,6 @@ Rails.application.routes.draw do
     resources :rooms, only: [:new, :create]
   end
 
+  get '/pages/dashboard'
+
 end

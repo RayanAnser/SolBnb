@@ -1,10 +1,12 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
+    @hotels = Hotel.all
   end
 
   def show
     @room = Room.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

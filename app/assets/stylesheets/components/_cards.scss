@@ -20,6 +20,18 @@
   grid-gap: 16px;
 }
 
+.cards .text {
+  display: block;
+}
+
+.cards .card-category .description .number {
+  font-size: 15px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
