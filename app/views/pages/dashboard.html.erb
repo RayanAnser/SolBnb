@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>My Bookings</h1>
+  <hr>
+  <div class="cards">
+  <% @bookings.each do |booking| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
+    <%# <%= link_to image_tag("https://img.icons8.com/?size=512&id=99933&format=png"), room_booking(@booking.room), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this room?"} %>
+    <div class="description">
+    <%= booking.room.hotel.name %>
+      <div class="number">
+        <p>Room n°<%=booking.room.id%></p>
+      </div>
+      </div>
+  </div>
+<% end %>
+</div>
+</div>

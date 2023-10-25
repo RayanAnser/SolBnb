@@ -1,0 +1,18 @@
+<div class="container">
+<h1>Our Rooms</h1>
+<hr>
+<div class="cards">
+<% @rooms.each do |room| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
+    <div class="description">
+      <div class="text">
+        <%= link_to room.hotel.name, room_path(room), style: "color: white;", class: "no-underline" %>
+      </div>
+      <div class="number">
+        <p>Room n°<%=room.id%></p>
+      </div>
+      </div>
+  </div>
+<% end %>
+</div>
+</div>

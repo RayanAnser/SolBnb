@@ -1,8 +1,33 @@
 Rails.application.routes.draw do
+  # get 'hotels/index'
+  # get 'hotels/show'
+  # get 'hotels/new'
+  # get 'hotels/create'
+  # get 'hotels/delete'
+  # get 'hotels/destroy'
+  # get 'rooms/index'
+  # get 'rooms/show'
+  # get 'rooms/new'
+  # get 'rooms/create'
+  # get 'rooms/delete'
+  # get 'rooms/destroy'
+  # get 'bookings/index'
+  # get 'bookings/show'
+  # get 'bookings/new'
+  # get 'bookings/create'
+  # get 'bookings/delete'
+  # get 'bookings/destroy'
   devise_for :users
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :rooms do
+    resources :bookings
+  end
+
+  resources :hotels do
+    resources :rooms, only: [:new, :create]
+  end
+
+  get '/pages/dashboard'
+
 end
